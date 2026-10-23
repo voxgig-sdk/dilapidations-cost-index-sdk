@@ -1,0 +1,72 @@
+<?php
+declare(strict_types=1);
+
+// DilapidationsCostIndex SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+DilapidationsCostIndexUtility::setRegistrar(function (DilapidationsCostIndexUtility $u): void {
+    $u->clean = [DilapidationsCostIndexClean::class, 'call'];
+    $u->clean_add = [DilapidationsCostIndexClean::class, 'add'];
+    $u->clean_explain = [DilapidationsCostIndexDone::class, 'clean_explain'];
+    $u->done = [DilapidationsCostIndexDone::class, 'call'];
+    $u->make_error = [DilapidationsCostIndexMakeError::class, 'call'];
+    $u->feature_add = [DilapidationsCostIndexFeatureAdd::class, 'call'];
+    $u->feature_hook = [DilapidationsCostIndexFeatureHook::class, 'call'];
+    $u->feature_init = [DilapidationsCostIndexFeatureInit::class, 'call'];
+    $u->fetcher = [DilapidationsCostIndexFetcher::class, 'call'];
+    $u->make_fetch_def = [DilapidationsCostIndexMakeFetchDef::class, 'call'];
+    $u->make_context = [DilapidationsCostIndexMakeContext::class, 'call'];
+    $u->make_options = [DilapidationsCostIndexMakeOptions::class, 'call'];
+    $u->make_request = [DilapidationsCostIndexMakeRequest::class, 'call'];
+    $u->make_response = [DilapidationsCostIndexMakeResponse::class, 'call'];
+    $u->make_result = [DilapidationsCostIndexMakeResult::class, 'call'];
+    $u->make_point = [DilapidationsCostIndexMakePoint::class, 'call'];
+    $u->make_spec = [DilapidationsCostIndexMakeSpec::class, 'call'];
+    $u->make_url = [DilapidationsCostIndexMakeUrl::class, 'call'];
+    $u->param = [DilapidationsCostIndexParam::class, 'call'];
+    $u->prepare_auth = [DilapidationsCostIndexPrepareAuth::class, 'call'];
+    $u->prepare_body = [DilapidationsCostIndexPrepareBody::class, 'call'];
+    $u->prepare_headers = [DilapidationsCostIndexPrepareHeaders::class, 'call'];
+    $u->prepare_method = [DilapidationsCostIndexPrepareMethod::class, 'call'];
+    $u->prepare_params = [DilapidationsCostIndexPrepareParams::class, 'call'];
+    $u->prepare_path = [DilapidationsCostIndexPreparePath::class, 'call'];
+    $u->prepare_query = [DilapidationsCostIndexPrepareQuery::class, 'call'];
+    $u->graphql_body = [DilapidationsCostIndexGraphql::class, 'body'];
+    $u->graphql_errors = [DilapidationsCostIndexGraphql::class, 'errors'];
+    $u->result_basic = [DilapidationsCostIndexResultBasic::class, 'call'];
+    $u->result_body = [DilapidationsCostIndexResultBody::class, 'call'];
+    $u->result_headers = [DilapidationsCostIndexResultHeaders::class, 'call'];
+    $u->transform_request = [DilapidationsCostIndexTransformRequest::class, 'call'];
+    $u->transform_response = [DilapidationsCostIndexTransformResponse::class, 'call'];
+});
